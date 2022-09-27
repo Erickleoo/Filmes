@@ -1,0 +1,36 @@
+<form [formGroup]="form" class="form margin-top">
+  <div class="inputs-flex">
+    <input type="text" formControlName="id" name="id" class="display-none">
+
+    <div>
+      <mat-form-field appearance="outline" class="width-height">
+        <mat-label>Cadastrar Filmes</mat-label>
+        <input matInput placeholder="Título do Filme" formControlName="nome" required>
+        <mat-error>{{error}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" class="width-height">
+        <mat-label>Genero</mat-label>
+        <select matNativeControl formControlName="genero">
+          <option value="" selected></option>
+          <option value="Terror">Terror</option>
+          <option value="Ação">Ação</option>
+          <option value="Suspense">Suspense</option>
+          <option value="Comédia">Comédia</option>
+          <option value="Romance">Romance</option>
+          <option value="Animação">Animação</option>
+        </select>
+        <mat-error>{{error}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="buttons-flex">
+      <button class=" button-size button-style button-color-blue " (click)="atualizarFilmes()"
+        [disabled]="!form.valid">Atualizar</button>
+      <button class="button-size button-style button-color-red" (click)="cancel()"
+        [disabled]="!form.valid">Cancelar</button>
+    </div>
+  </div>
+</form>

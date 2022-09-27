@@ -1,0 +1,33 @@
+.footer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 45px;
+}
+
+.background-color {
+  background: #F6511D;
+}
+
+.margin-top {
+  margin-top: 25px;
+}
+
+.footer-padding {
+  padding: 25px 0px 25px 0px;
+}
+
+.linha {
+  width: 0;
+  height: 200px;
+  align-self: flex-start;
+  border: 1px solid #FFFFFF;
+}
+
+.font-style-p {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #FFFCFC;
+  line-height: 30px;
+}

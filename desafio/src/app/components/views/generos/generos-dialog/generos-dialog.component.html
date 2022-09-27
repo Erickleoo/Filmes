@@ -1,0 +1,19 @@
+<form [formGroup]="form" class="form margin-top">
+  <div class="inputs-flex">
+    <input type="text" formControlName="id" name="id" class="display-none">
+    <div>
+      <mat-form-field appearance="outline" class="width-height">
+        <mat-label>Cadastrar Gênero</mat-label>
+        <input matInput placeholder="Gênero" formControlName="genero" required>
+        <mat-error>{{error}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="buttons-flex">
+      <button class="button-size button-style button-color-blue " mat-button type="submit" [disabled]="!form.valid"
+        (click)="atualizarGenero() ">Atualizar</button>
+      <button class="button-size button-style button-color-red" mat-button type="submit" [disabled]="!form.valid"
+        (click)="cancel()">Cancelar</button>
+    </div>
+  </div>
+</form>

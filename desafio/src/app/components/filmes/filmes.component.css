@@ -1,0 +1,46 @@
+.margin-top {
+  margin-top: 20px;
+}
+
+.inputs-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.width-height {
+  width: 400px;
+  height: 58px;
+}
+
+.button-salvar {
+  width: 180px;
+  height: 58px;
+  background: #F6511D;
+  color: #FFF;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.margin-top-button {
+  margin-top: 35px;
+}
+
+.margin-cadastrados {
+  margin: 90px 0;
+}
+
+.list-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.button-size {
+  width: 125px;
+  height: 35px;
+  border-radius: 5px;
+}

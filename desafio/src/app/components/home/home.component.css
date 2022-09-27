@@ -1,0 +1,70 @@
+.main-padding {
+  padding: 35px 0px 20px 0px;
+}
+
+.section-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.font-style-titulo-home {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.lorem-container {
+  width: 950px;
+  height: 112px;
+}
+
+
+.font-style-subtitulo-home {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.font-style-subtitulo-p {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.cards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.content-size {
+  width: 400px;
+  height: 100px;
+}
+
+.box-shadow {
+  box-shadow:
+    0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.cards {
+  background-color: #f2f8f9;
+  padding: 32px 24px;
+  border: 1px solid #f2f8f9;
+}
+
+.cards:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -5px;
+  border: 1px solid #cccccc;
+  background-color: #FFF;
+}

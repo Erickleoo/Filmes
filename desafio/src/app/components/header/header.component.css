@@ -1,0 +1,42 @@
+.background-color {
+  background: #9BD2DE;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+}
+
+.font-style-a {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #4B2142;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.line-height {
+  line-height: 21px;
+}
+
+.font-size-title-1 {
+  font-family: 'Roboto';
+  font-size: 1.5rem;
+}
+
+.font-size-title-2 {
+  font-family: 'Roboto';
+  font-size: 1.25rem;
+}
+

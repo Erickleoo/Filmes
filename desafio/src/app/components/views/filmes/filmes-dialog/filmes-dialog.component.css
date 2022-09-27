@@ -1,0 +1,13 @@
+.display-none {
+  display: none;
+}
+
+.width-height {
+  width: 100%;
+}
+
+.button-size {
+  width: 125px;
+  height: 35px;
+  border-radius: 5px;
+}

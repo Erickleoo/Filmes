@@ -1,0 +1,73 @@
+<app-header [tituloGenerico]="tituloOriginal"></app-header>
+
+<main>
+  <section class="margin-top">
+    <h2 class="titulo">Filmes</h2>
+    <div class="img-flex">
+      <img src="assets/images/cinema1.svg" alt="logo cinema" width="90px" height="90px">
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="cadastrarFilmes()" class="form margin-top">
+      <div class="inputs-flex container">
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>Cadastrar Filmes</mat-label>
+            <input matInput placeholder="Título do Filme" formControlName="nome" required>
+            <mat-error>{{error}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>Genero</mat-label>
+            <select matNativeControl formControlName="genero">
+              <option value="" selected></option>
+              <option value="Terror">Terror</option>
+              <option value="Ação">Ação</option>
+              <option value="Suspense">Suspense</option>
+              <option value="Comédia">Comédia</option>
+              <option value="Romance">Romance</option>
+              <option value="Animação">Animação</option>
+            </select>
+            <mat-error>{{error}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button class="button-salvar" type="submit" mat-button [disabled]="!form.valid">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="margin-cadastrados container">
+    <div *ngFor="let filme of filmes" class="list-flex">
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <p class="font-style-p">{{filme.nome}}</p>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <div class="itens-flex">
+            <p class="font-style-p">{{filme.genero}}</p>
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <div class="buttons-flex">
+            <button class="button-color-orange button-style button-size " mat-button
+              (click)="editarFilmes(filme.id)">Editar</button>
+            <button class="button-color-blue button-style button-size " mat-button
+              (click)="deletarFilmes(filme.id)">Excluir</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+  </section>
+
+</main>
+
+<app-footer></app-footer>

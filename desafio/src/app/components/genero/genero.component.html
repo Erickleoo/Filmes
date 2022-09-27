@@ -1,0 +1,51 @@
+<app-header [tituloGenerico]="tituloOriginal"></app-header>
+
+<main>
+  <section class="margin-top container ">
+    <h2 class="titulo">Gêneros</h2>
+    <div class="img-flex">
+      <img src="assets/images/theater1.svg" alt="logo cinema" width="90px" height="90px">
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="cadastrarGenero()" class="form margin-top">
+      <div class="inputs-flex">
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>Cadastrar Gênero</mat-label>
+            <input matInput placeholder="Gênero" formControlName="genero" required>
+            <mat-error>{{error}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button class="button-salvar" mat-button type="submit" [disabled]="!form.valid">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="margin-cadastrados container">
+    <div *ngFor="let genero of generos" class="list-flex">
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <p class="font-style-p">{{genero.genero}}</p>
+        </mat-list-item>
+      </mat-list>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <div class="buttons-flex">
+            <button class="button-color-orange button-style button-size " mat-button
+              (click)="editarGeneros(genero.id)">Editar</button>
+            <button class="button-color-blue button-style button-size " mat-button
+              (click)="deletarGeneros(genero.id)">Excluir</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+  </section>
+
+</main>
+
+<app-footer></app-footer>

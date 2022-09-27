@@ -1,0 +1,80 @@
+<app-header [tituloGenerico]="tituloOriginal" [subtituloGenerico]="subtituloOriginal"></app-header>
+
+<main>
+  <section class="margin-top">
+    <h2 class="titulo">Cadastro</h2>
+    <div class="img-flex">
+      <img src="assets/images/cadastrar.png" alt="" width="90px" height="90px">
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="cadastrarUsuario()" class="form container margin-top">
+      <div class="inputs-flex ">
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. João" formControlName="nome" name="nome" required>
+            <mat-error>{{error}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="exemplo@example.com" formControlName="email" required>
+            <mat-error *ngIf="form.get('email')?.hasError('required') || form.get('email')?.hasError('email')">
+              {{validaEmail()}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="width-height">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="(00) 3333-3333" formControlName="telefone" required>
+            <mat-error>{{error}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="margin-top-button">
+        <button class="button-cadastrar" mat-button type="submit" [disabled]="!form.valid">Cadastrar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="margin-cadastrados">
+    <div *ngFor="let usuario of usuarios" class="list-flex container">
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <p class="font-style-p">{{usuario.nome}}</p>
+        </mat-list-item>
+      </mat-list>
+      <div class="contatos-flex">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <p class="font-style-p">{{usuario.email}}</p>
+          </mat-list-item>
+        </mat-list>
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <p class="font-style-p">{{usuario.telefone}}</p>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <mat-list role="list">
+        <mat-list-item role="listitem">
+          <div class="buttons-flex">
+            <button class="button-color-orange button-style button-size" mat-button
+              (click)="editarUsuario(usuario.id)">Editar</button>
+            <button class="button-color-blue button-style button-size" mat-button
+              (click)="deletarUsuarios(usuario.id)">Excluir</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+  </section>
+
+</main>
+
+<app-footer></app-footer>

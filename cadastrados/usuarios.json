@@ -1,0 +1,57 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Paulo Andre",
+      "email": "paulo@email.com",
+      "telefone": "(11) 3349-6788"
+    },
+    {
+      "id": 2,
+      "nome": "Marcos Lucio",
+      "email": "marcos@email.com",
+      "telefone": "(21) 3349-6788"
+    },
+    {
+      "id": 3,
+      "nome": "Laura Port",
+      "email": "laura@email.com",
+      "telefone": "(23) 3349-6788"
+    }
+  ],
+  "filmes": [
+    {
+      "id": 1,
+      "nome": "Os outros",
+      "genero": "Terror"
+    },
+    {
+      "id": 2,
+      "nome": "Até o Último Homem",
+      "genero": "Ação"
+    },
+    {
+      "id": 3,
+      "nome": "O Máscara",
+      "genero": "Comédia"
+    }
+  ],
+  "generos": [
+    {
+      "id": 1,
+      "genero": "Terror"
+    },
+    {
+      "id": 2,
+      "genero": "Ação"
+    },
+    {
+      "id": 3,
+      "genero": "Comédia"
+    },
+    {
+      "id": 4,
+      "genero": "Animação"
+    }
+  ]
+}
