@@ -5,6 +5,8 @@ import { Filmes } from './../../model/filmes/filmes.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FilmesDialogComponent } from '../views/filmes/filmes-dialog/filmes-dialog.component';
+import { Generos } from 'src/app/model/generos/generos.model';
+import { SalvarGenerosService } from 'src/app/services/generos/salvar-generos.service';
 
 @Component({
   selector: 'app-filmes',
@@ -15,11 +17,13 @@ export class FilmesComponent implements OnInit {
   form: FormGroup;
   error = "Este campo é obrigatório.";
   filmes: Filmes[];
+  generos: Generos[];
   id: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
     private salvarFilmesService: SalvarFilmesService,
+    private salvarGenerosService: SalvarGenerosService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog
   ) { }
@@ -42,6 +46,15 @@ export class FilmesComponent implements OnInit {
       error: () => {
         console.error("Erro ao ler os filmes!");
         this.alertaSnackBar("falha");
+      }
+    })
+
+    this.salvarGenerosService.lerGenerosCadastrados().subscribe({
+      next: (generos: Generos[]) => {
+        this.generos = generos;
+      },
+      error: () => {
+        console.error("Erro ao ler os Gêneros");
       }
     })
   }

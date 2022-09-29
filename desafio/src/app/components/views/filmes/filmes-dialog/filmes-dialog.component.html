@@ -15,12 +15,7 @@
         <mat-label>Genero</mat-label>
         <select matNativeControl formControlName="genero">
           <option value="" selected></option>
-          <option value="Terror">Terror</option>
-          <option value="Ação">Ação</option>
-          <option value="Suspense">Suspense</option>
-          <option value="Comédia">Comédia</option>
-          <option value="Romance">Romance</option>
-          <option value="Animação">Animação</option>
+          <option *ngFor="let genero of generos" value="{{genero.genero}}">{{genero.genero}}</option>
         </select>
         <mat-error>{{error}}</mat-error>
       </mat-form-field>
